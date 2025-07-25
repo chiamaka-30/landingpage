@@ -3,33 +3,18 @@ import { Star } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-20 px-6 bg-pink-100 overflow-hidden">
-      {/* Background net grid */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        <svg
-          className="w-full h-full text-pink-300 opacity-60"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          viewBox="0 0 100 100"
-        >
-          <defs>
-            <pattern
-              id="grid-pattern"
-              width="10"
-              height="10"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 10 0 L 0 0 0 10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.4"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-        </svg>
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center py-20 px-6 overflow-hidden rounded-2xl shadow-sm border border-gray-200">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#fff6f4] to-[#e1f2f6] -z-20" />
+
+      {/* Net/Grid Pattern Background */}
+      <div
+        className="absolute inset-0 bg-[length:40px_40px] opacity-30 pointer-events-none -z-10"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #d1d5db 1px, transparent 1px), linear-gradient(to bottom, #d1d5db 1px, transparent 1px)",
+        }}
+      />
 
       {/* Content */}
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center z-10">
