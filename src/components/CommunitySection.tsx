@@ -25,11 +25,6 @@ const CommunitySection = () => {
 
           {/* Logos with Image */}
           <div className="flex items-center gap-4">
-            <img
-              src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
-              alt="Profile"
-              className="w-10 h-10 rounded-full object-cover"
-            />
             <SiTypescript size={30} className="text-blue-600" />
             <SiReact size={30} className="text-sky-500" />
             <SiGithub size={30} className="text-black" />
