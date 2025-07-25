@@ -1,5 +1,5 @@
 import React from "react";
-import { Check } from "lucide-react";
+import { Check, Star } from "lucide-react";
 
 const plans = [
   {
@@ -79,12 +79,10 @@ const MembershipOptions = () => {
         ))}
       </div>
 
+      {/* Star Icons */}
       <div className="flex justify-center mt-12 space-x-2">
         {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            className="w-3 h-3 bg-orange-300 rounded-full"
-          />
+          <Star key={i} size={20} className="text-orange-400 fill-orange-400" />
         ))}
       </div>
     </section>
