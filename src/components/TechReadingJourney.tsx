@@ -13,16 +13,16 @@ const TechReadingJourney = () => {
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#fff6f4] to-[#e1f2f6]" />
 
-      {/* Grid pattern overlay */}
+      {/* Net/Grid Pattern Background */}
       <div
-        className="absolute inset-0 bg-[length:40px_40px] opacity-30"
+        className="absolute inset-0 bg-[length:40px_40px] opacity-30 pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #e5e7eb 0.5px, transparent 0.5px), linear-gradient(to bottom, #e5e7eb 0.5px, transparent 0.5px)",
+            "linear-gradient(to right, #d1d5db 1px, transparent 1px), linear-gradient(to bottom, #d1d5db 1px, transparent 1px)",
         }}
       />
 
-      {/* Content Layer */}
+      {/* Content */}
       <div className="relative z-10">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-mono font-extrabold text-center mb-10 text-gray-900">
@@ -47,9 +47,7 @@ const TechReadingJourney = () => {
               {index < steps.length - 1 && (
                 <ArrowRight
                   className="text-orange-400 hidden md:block"
-                  style={{
-                    transform: "rotate(-20deg)",
-                  }}
+                  style={{ transform: "rotate(-20deg)" }}
                 />
               )}
             </div>
