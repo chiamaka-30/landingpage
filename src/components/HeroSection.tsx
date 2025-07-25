@@ -1,20 +1,41 @@
-import React from 'react';
-import { Star } from 'lucide-react';
+import React from "react";
+import { ArrowRight } from "lucide-react";
 
-export default function HeroSection() {
+const steps = [
+  {
+    number: 1,
+    text: "Choose your membership tier",
+  },
+  {
+    number: 2,
+    text: "Get your monthly book selection",
+  },
+  {
+    number: 3,
+    text: "Join our discussion forums",
+  },
+  {
+    number: 4,
+    text: "Attend exclusive meetups",
+  },
+];
+
+const TechReadingJourney = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-20 px-6 bg-white overflow-hidden">
-      {/* Background net grid */}
+    <section className="relative bg-[#fffdfc] p-10 rounded-xl overflow-hidden">
+      {/* Background Grid Pattern */}
       <div className="absolute inset-0 -z-10">
         <svg
-          className="w-full h-full text-gray-300 opacity-30"
+          className="w-full h-full opacity-10"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
           viewBox="0 0 100 100"
         >
           <defs>
             <pattern
-              id="grid-pattern"
+              id="grid"
+              x="0"
+              y="0"
               width="10"
               height="10"
               patternUnits="userSpaceOnUse"
@@ -22,71 +43,40 @@ export default function HeroSection() {
               <path
                 d="M 10 0 L 0 0 0 10"
                 fill="none"
-                stroke="currentColor"
-                strokeWidth="0.3"
+                stroke="#e0dcdc"
+                strokeWidth="0.5"
               />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+          <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
       </div>
 
-      {/* Content */}
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center z-10">
-        {/* Left Section */}
-        <div>
-          <h1 className="text-5xl font-mono font-bold leading-tight mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-neutral-800">
-              Join the ultimate
-            </span>{' '}
-            <span className="text-gray-900">tech book club</span>
-          </h1>
-          <p className="text-gray-600 text-lg mb-8 max-w-md">
-            Turn your reading time into learning time with fellow tech
-            enthusiasts. Get curated recommendations, join vibrant discussions,
-            and level up your skills one chapter at a time.
-          </p>
-          <button className="border-2 border-black font-mono px-6 py-2 rounded-md hover:bg-black hover:text-white transition duration-200 mb-6">
-            REVIEW MEMBERSHIP OPTIONS ↓
-          </button>
-          <div className="flex items-center space-x-4">
-            <div className="flex -space-x-2">
-              <img
-                src="https://randomuser.me/api/portraits/men/32.jpg"
-                alt="avatar1"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
-              <img
-                src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="avatar2"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
-              <img
-                src="https://randomuser.me/api/portraits/men/55.jpg"
-                alt="avatar3"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
-            </div>
-            <div className="flex items-center space-x-1 text-orange-400">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} size={16} fill="orange" />
-              ))}
-            </div>
-            <p className="text-sm text-gray-500">
-              200+ developers joined already
-            </p>
-          </div>
-        </div>
+      {/* Section Content */}
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
+        Your tech <br className="md:hidden" />
+        <span className="font-extrabold">reading journey</span>
+      </h2>
 
-        {/* Right Section */}
-        <div>
-          <img
-            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
-            alt="Group reading"
-            className="rounded-xl shadow-md w-full max-w-full h-auto"
-          />
-        </div>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+        {steps.map((step, index) => (
+          <div key={index} className="flex items-center gap-4">
+            <div className="flex flex-col items-center">
+              <div className="border border-gray-700 rounded-md w-10 h-10 flex items-center justify-center text-lg font-bold">
+                {step.number}
+              </div>
+              <p className="text-sm text-center mt-2 text-gray-700 max-w-[120px] leading-snug">
+                {step.text}
+              </p>
+            </div>
+            {index < steps.length - 1 && (
+              <ArrowRight className="text-orange-500 hidden md:block" />
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );
-}
+};
+
+export default TechReadingJourney;
