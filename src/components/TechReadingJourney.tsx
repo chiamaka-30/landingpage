@@ -9,18 +9,28 @@ const steps = [
 
 const TechReadingJourney = () => {
   return (
-    <section className="relative rounded-2xl p-10 overflow-hidden">
-      {/* Gradient + Grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#fff6f4,#e1f2f6)]" />
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M40 0H0V40\' stroke=\'%23D1D5DB\' stroke-width=\'0.5\'/%3E%3C/svg%3E')] opacity-40" />
-      
-      {/* Content */}
+    <section className="relative rounded-2xl p-10 overflow-hidden shadow-sm border border-gray-200">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#fff6f4] to-[#e1f2f6]" />
+
+      {/* Grid pattern overlay */}
+      <div
+        className="absolute inset-0 bg-[length:40px_40px] opacity-30"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #e5e7eb 0.5px, transparent 0.5px), linear-gradient(to bottom, #e5e7eb 0.5px, transparent 0.5px)",
+        }}
+      />
+
+      {/* Content Layer */}
       <div className="relative z-10">
+        {/* Title */}
         <h2 className="text-3xl md:text-4xl font-mono font-extrabold text-center mb-10 text-gray-900">
           Your tech <br className="md:hidden" />
           reading journey
         </h2>
 
+        {/* Steps */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
           {steps.map((step, index) => (
             <div key={index} className="flex items-center gap-4">
@@ -32,8 +42,15 @@ const TechReadingJourney = () => {
                   {step.text}
                 </p>
               </div>
+
+              {/* Arrow */}
               {index < steps.length - 1 && (
-                <ArrowRight className="text-orange-500 hidden md:block" />
+                <ArrowRight
+                  className="text-orange-400 hidden md:block"
+                  style={{
+                    transform: "rotate(-20deg)",
+                  }}
+                />
               )}
             </div>
           ))}
