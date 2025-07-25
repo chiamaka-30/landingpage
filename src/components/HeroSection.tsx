@@ -3,39 +3,43 @@ import { Star } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center py-16 px-4 bg-gradient-to-br from-orange-50 to-white relative">
+    <section className="relative min-h-screen flex items-center justify-center py-20 px-6 bg-white overflow-hidden">
       {/* Background net grid */}
       <div className="absolute inset-0 -z-10">
-        <svg className="w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
+        <svg
+          className="w-full h-full text-gray-300 opacity-30"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          viewBox="0 0 100 100"
+        >
           <defs>
-            <pattern id="hero-net" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-              <path d="M10 0 L0 0 0 10" fill="none" stroke="gray" strokeWidth="0.5" />
+            <pattern
+              id="grid-pattern"
+              width="10"
+              height="10"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 10 0 L 0 0 0 10"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.3"
+              />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#hero-net)" />
+          <rect width="100%" height="100%" fill="url(#grid-pattern)" />
         </svg>
       </div>
-      
-      {/* Background net grid */}
-      <div className="absolute inset-0 -z-10">
-        <svg className="w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
-          <defs>
-            <pattern id="hero-net" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-              <path d="M10 0 L0 0 0 10" fill="none" stroke="gray" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#hero-net)" />
-        </svg>
-      </div>
-      
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* Left */}
+
+      {/* Content */}
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center z-10">
+        {/* Left Section */}
         <div>
           <h1 className="text-5xl font-mono font-bold leading-tight mb-6">
-            <span className="bg-gradient-to-r from-orange-500 to-black bg-clip-text text-transparent">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-neutral-800">
               Join the ultimate
-            </span>{" "}
-            <span className="text-black">tech book club</span>
+            </span>{' '}
+            <span className="text-gray-900">tech book club</span>
           </h1>
           <p className="text-gray-600 text-lg mb-8 max-w-md">
             Turn your reading time into learning time with fellow tech
@@ -74,7 +78,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Right */}
+        {/* Right Section */}
         <div>
           <img
             src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
