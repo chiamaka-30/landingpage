@@ -3,13 +3,13 @@ import { Star } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-20 px-6 overflow-hidden rounded-2xl shadow-sm border border-gray-200">
+    <section className="relative min-h-screen flex items-center justify-center py-20 px-6 overflow-hidden border border-gray-200 shadow-sm rounded-2xl">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#fff6f4] to-[#e1f2f6] -z-20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#fff6f4] to-[#e1f2f6]" />
 
       {/* Net/Grid Pattern Background */}
       <div
-        className="absolute inset-0 bg-[length:40px_40px] opacity-30 pointer-events-none -z-10"
+        className="absolute inset-0 bg-[length:40px_40px] opacity-30 pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(to right, #d1d5db 1px, transparent 1px), linear-gradient(to bottom, #d1d5db 1px, transparent 1px)",
@@ -17,7 +17,7 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center z-10">
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Section */}
         <div>
           <h1 className="text-5xl font-mono font-bold leading-tight mb-6">
