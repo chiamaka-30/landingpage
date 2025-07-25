@@ -10,18 +10,18 @@ const steps = [
 
 const TechReadingJourney = () => {
   return (
-    <section className="relative bg-pink-100 p-10 rounded-xl overflow-hidden">
-      {/* Stronger Grid Net Background */}
-      <div className="absolute inset-0 -z-10">
+    <section className="relative bg-gradient-to-br from-pink-300 to-pink-100 p-10 rounded-xl overflow-hidden">
+      {/* Grid Net Background */}
+      <div className="absolute inset-0 -z-10 opacity-80">
         <svg
-          className="w-full h-full opacity-60"
+          className="w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
           viewBox="0 0 100 100"
         >
           <defs>
             <pattern
-              id="grid"
+              id="grid-pattern"
               x="0"
               y="0"
               width="10"
@@ -31,29 +31,27 @@ const TechReadingJourney = () => {
               <path
                 d="M10 0 L0 0 0 10"
                 fill="none"
-                stroke="#d27b7b"
-                strokeWidth="1.2"
+                stroke="#b91c1c"
+                strokeWidth="1.5"
               />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
+          <rect width="100%" height="100%" fill="url(#grid-pattern)" />
         </svg>
       </div>
 
-      {/* Radial Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,192,203,0.3),_transparent_70%)] -z-20" />
-
-      {/* Content */}
+      {/* Title */}
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
         Your tech <br className="md:hidden" />
         <span className="font-extrabold">reading journey</span>
       </h2>
 
+      {/* Steps */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
         {steps.map((step, index) => (
           <div key={index} className="flex items-center gap-4">
             <div className="flex flex-col items-center">
-              <div className="border border-gray-700 rounded-md w-10 h-10 flex items-center justify-center text-lg font-bold">
+              <div className="border border-gray-700 rounded-md w-10 h-10 flex items-center justify-center text-lg font-bold bg-white shadow">
                 {step.number}
               </div>
               <p className="text-sm text-center mt-2 text-gray-700 max-w-[120px] leading-snug">
@@ -61,7 +59,7 @@ const TechReadingJourney = () => {
               </p>
             </div>
             {index < steps.length - 1 && (
-              <ArrowRight className="text-orange-500 hidden md:block" />
+              <ArrowRight className="text-rose-500 hidden md:block" />
             )}
           </div>
         ))}
