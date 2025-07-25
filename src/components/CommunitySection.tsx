@@ -1,5 +1,5 @@
-import React from 'react';
-import { SiReact, SiGithub } from 'react-icons/si';
+import React from 'react'
+import { SiReact, SiGithub, SiTypescript } from 'react-icons/si';
 
 const CommunitySection = () => {
   return (
@@ -8,26 +8,31 @@ const CommunitySection = () => {
         {/* Text Left */}
         <div>
           <h2 className="text-4xl font-mono font-bold text-gray-900 mb-4 leading-snug">
-            Not your average <br /> book {" "}
+            Not your average <br /> book{" "}
             <span className="relative inline-block">
               <span className="text-black">club</span>
               <span className="absolute -top-2 -left-2 -right-2 -bottom-1 border-[3px] border-orange-500 rounded-full transform rotate-[2deg] pointer-events-none"></span>
             </span>
           </h2>
+
           <p className="text-gray-700 text-base max-w-md mb-6">
-            Connect with a community that speaks your language – from {" "}
+            Connect with a community that speaks your language – from{" "}
             <span className="font-semibold text-black">Python</span> to{" "}
             <span className="font-semibold text-black">TypeScript</span> and
             everything in between. Our discussions blend technical depth with
             practical applications.
           </p>
 
+          {/* Logos with Image */}
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+            <img
               src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
-            </div>
-            <SiGithub size={30} className="text-black" />
+              alt="Profile"
+              className="w-10 h-10 rounded-full object-cover"
+            />
+            <SiTypescript size={30} className="text-blue-600" />
             <SiReact size={30} className="text-sky-500" />
+            <SiGithub size={30} className="text-black" />
           </div>
         </div>
 
