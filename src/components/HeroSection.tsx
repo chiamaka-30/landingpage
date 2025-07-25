@@ -2,31 +2,19 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 const steps = [
-  {
-    number: 1,
-    text: "Choose your membership tier",
-  },
-  {
-    number: 2,
-    text: "Get your monthly book selection",
-  },
-  {
-    number: 3,
-    text: "Join our discussion forums",
-  },
-  {
-    number: 4,
-    text: "Attend exclusive meetups",
-  },
+  { number: 1, text: "Choose your membership tier" },
+  { number: 2, text: "Get your monthly book selection" },
+  { number: 3, text: "Join our discussion forums" },
+  { number: 4, text: "Attend exclusive meetups" },
 ];
 
 const TechReadingJourney = () => {
   return (
-    <section className="relative bg-[#fffdfc] p-10 rounded-xl overflow-hidden">
-      {/* Background Grid Pattern */}
+    <section className="relative bg-pink-100 p-10 rounded-xl overflow-hidden">
+      {/* Stronger Grid Net Background */}
       <div className="absolute inset-0 -z-10">
         <svg
-          className="w-full h-full opacity-10"
+          className="w-full h-full opacity-60"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
           viewBox="0 0 100 100"
@@ -41,10 +29,10 @@ const TechReadingJourney = () => {
               patternUnits="userSpaceOnUse"
             >
               <path
-                d="M 10 0 L 0 0 0 10"
+                d="M10 0 L0 0 0 10"
                 fill="none"
-                stroke="#e0dcdc"
-                strokeWidth="0.5"
+                stroke="#d27b7b"
+                strokeWidth="1.2"
               />
             </pattern>
           </defs>
@@ -52,7 +40,10 @@ const TechReadingJourney = () => {
         </svg>
       </div>
 
-      {/* Section Content */}
+      {/* Radial Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,192,203,0.3),_transparent_70%)] -z-20" />
+
+      {/* Content */}
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
         Your tech <br className="md:hidden" />
         <span className="font-extrabold">reading journey</span>
